@@ -11,7 +11,7 @@ const replaceAllButton = document.querySelector(".replace-all-button")
 // this array.
 const rowElements = document.querySelectorAll(".row")
 
-// When you call the function belwo, it will get and return an INNER ARRAY
+// When you call the function below, it will get and return an INNER ARRAY
 // containing the cell elements for a given row.
 // Call this function from WITHIN your row elements loop. Then you will, in turn,
 // need to loop over the resulting cell elements. But where should this whole
@@ -34,20 +34,21 @@ replaceAllButton.addEventListener("click", function () {
         let cells = getCellElements(rowElements[i])
         //console.log(rowElements[i]);
         for (let j = 0; j < cells.length; j++) {
-            //console.log(cells[j].innerHTML);
-            if (findValue.includes('Mcc')); {
-                console.log('Mcc');
-
+            if (cells[j].innerHTML.includes(findValue)) {
+                cells[j].innerHTML = cells[j].innerHTML.replace(findValue, replaceValue)
             }
-
+            //console.log(cells[j].innerHTML);
         }
-
     }
-
-
 });
 
 
+
+// 6. For each cell element, check if a cell contains the user-provided search string. Use the string method includes().
+
+// 7. If a cell does contain the user-provided search string, use innerHTML and the string method replace() to replace the user-provided search string with the user-provided replacement string.
+
+// In all your loops, use distinct counters like "i" and "j".
 
 
 // One last thing: dedicate very careful attention to using variables and
